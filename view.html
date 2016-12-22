@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WeChat打飞机</title>
+    <style>
+        body{padding: 10px;}
+        #backGround,#ship{position: absolute;}
+        #ship{top:0;
+            left:0;
+            z-index:2;}
+        #backGround{
+            background:url("backGround.jpg");z-index: 1;
+            -webkit-animation-name: flymove;
+            -webkit-animation-duration: 10s; /*10s内走完*/
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-iteration-count: 20000;
+
+        }
+        #ship{
+            top:0;
+            left:0;
+            z-index: 2;}
+        /* 让背景动起来*/
+        @-webkit-keyframes flymove { /*关键帧*/
+            0%{background-position: 0 0;} /* 从0开始*/
+            100%{background-position: 0 800px;}/*当100时*/
+        }
+
+    </style>
+</head>
+<body onload="">
+<div style="position: relative;">
+    <canvas id="backGround" width="300" height="400">你的浏览器不支持canvas</canvas>
+    <canvas id="ship" width="300" height="400">你的浏览器不支持canvas</canvas>
+</div>
+
+</body>
+</html>
